@@ -1,0 +1,57 @@
+/* HEADER */
+.top-header {
+
+}
+.logo-container {
+
+}
+.nav-container {
+
+}
+
+/* NAVIGATION */
+.nav-list {
+
+}
+.nav-list li {
+
+}
+.nav-list li a {
+
+}
+.nav-list li a:hover {
+
+}
+.nav-list li a.active {
+
+}
+.nav-icon {
+    width:25px;
+    cursor: pointer;
+}
+/* MOBILE MENU */ 
+.mobile-menu-close {
+    cursor: pointer;
+}
+.mobile-menu-close-icon {
+    width:20px;
+    float:left;
+}
+.mobile-nav-icon {
+    width:25px;
+    cursor: pointer;
+}
+.mobile-menu {
+
+}
+.mobile-nav-list {
+
+}
+@media screen and (max-width:719px) {
+    .mobile-hide {
+        display:none;
+    }
+    .mobile-view {
+        display:block;
+    }
+}

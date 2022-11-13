@@ -1,0 +1,29 @@
+.message {
+    padding:10px;
+    font-size:15px;
+    margin-bottom:10px;
+    border-radius:10px;
+}
+.message-icon {
+    width:20px;
+    float:left;
+    margin-right:10px;
+}
+.message-error {
+    border:1px solid #3f0001;
+    background:#e96d6f;
+    color:#3f0001;
+}
+.message-check {
+    border:1px solid #012a00;
+    background:#90ec8f;
+    color:#012a00;
+}
+.message-info {
+    border:1px solid #000b35;
+    background:#3d79f1;
+    color:#000b35;
+}
+.message-close-icon {
+    float:right;
+}
