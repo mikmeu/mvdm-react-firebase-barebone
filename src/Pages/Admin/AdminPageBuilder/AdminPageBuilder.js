@@ -3,17 +3,17 @@ import { Route, Routes } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { Heading, Icon, Table } from '../../../Components';
 import Link from '../../../Components/Link';
-import { BlogService } from '../../../services/DatabaseService';
+import { PageBuilderService } from '../../../services/DatabaseService';
 
-class AdminBlogs extends Component {
+class AdminPageBuilder extends Component {
     state = {
-        blogs: []
+        pages: []
     }
     componentDidMount() {
         const self = this;
         this.mount = true;
-        BlogService.getAll().then((result) => {
-           if (this.mount) self.setState({blogs:result})
+        PageBuilderService.getAll().then((result) => {
+           if (this.mount) self.setState({pages:result})
         }            
         ).catch(error => toast.error(error));
     }
@@ -21,21 +21,22 @@ class AdminBlogs extends Component {
         this.mount = false;
     }
     render() {
-        const { blogs } = this.state;
+        const { pages } = this.state;
         const { routes } = this.props;
+        
         return (<div>
-                    <Heading type="h2">Blogs</Heading>
+                    <Heading type="h2">Pages</Heading>
                     <Routes>
                     {routes.map((route, i) => (
                         <Route key={i} path={route.path} element={<route.component />} />
                         ))}
-                    <Route path="/" element={<AdminBlogsIndex blogs={blogs} /> }/>
+                    <Route path="/" element={<AdminPageBuilderIndex pages={pages} /> }/>
                     </Routes>
                 </div>
         );
     }
 }
-function AdminBlogsIndex({blogs}) {
-    return(<Table heading={['Slug','Title','Actions']} rows={blogs.map((blog) => ([blog.id,blog.newsTitle,<Link type="navLink" href={"/admin/blogs/"+blog.id } text={<Icon name="edit" />}></Link>]))} />)
+function AdminPageBuilderIndex({pages}) {
+    return(<Table heading={['Slug','Title','Actions']} rows={pages.map((page) => ([page.id,page.title,<Link type="navLink" href={"/admin/pages/"+page.id } text={<Icon name="edit" />}></Link>]))} />)
 }
-export default AdminBlogs;
+export default AdminPageBuilder;

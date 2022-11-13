@@ -57,3 +57,4 @@ class DatabaseService {
 export const PageService = new DatabaseService("pages");
 export const BlogService = new DatabaseService("news");
 export const UserService = new DatabaseService("users");
+export const PageBuilderService = new DatabaseService("pagebuilder");

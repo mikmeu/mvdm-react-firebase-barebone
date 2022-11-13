@@ -1,5 +1,5 @@
 import { Admin } from "../Pages/Admin";
-import { AdminBlogs, AdminBlogsEdit } from "../Pages/Admin/AdminBlogs";
+import { AdminPageBuilder, AdminPageBuilderEdit } from "../Pages/Admin/AdminPageBuilder";
 
 export const adminRoutes = [
     { 
@@ -7,11 +7,11 @@ export const adminRoutes = [
       component: Admin,
       routes: [
         {
-            path: "blogs/*",
-            component: AdminBlogs,
+            path: "pages/*",
+            component: AdminPageBuilder,
             routes: [{
                 path: ":id",
-                component: AdminBlogsEdit
+                component: AdminPageBuilderEdit
             }
             ]
         }
