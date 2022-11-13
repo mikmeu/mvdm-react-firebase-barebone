@@ -9,6 +9,7 @@ export { default as Image } from './Image';
 export { default as Item } from './Item';
 export { default as ItemContainer } from './ItemContainer';
 export { default as List } from './List';
+export { default as Loader } from './Loader';
 export { default as Message } from './Message';
 export { default as Paragraph } from './Paragraph';
 export { default as Table } from './Table';

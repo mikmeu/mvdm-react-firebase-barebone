@@ -1,14 +1,16 @@
 import { db } from "./FirebaseFunctions";
+import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 
 class DatabaseService {
   collection;
 
   constructor(collectionName) {
-    this.collection = db.collection(collectionName);
+    this.collection = collection(db,collectionName);
+    this.collectionName = collectionName;
   }
 
   getAll = async () => {
-    const snapshot = await this.collection.get();
+    const snapshot = await getDocs(this.collection);
     return snapshot.docs.map((doc) => {
       return {
         id: doc.id,
@@ -18,8 +20,14 @@ class DatabaseService {
   };
 
   getOne = async ( queryKey ) => {
-    const snapshot = await this.collection.doc(queryKey).get();
-    return {status:200,data:snapshot.data()};
+    const docRef = doc(db,this.collectionName,queryKey);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+        return {status:200,data:docSnap.data()};
+    } else {
+        return {status:404}
+    }
+    
   };
 
   getReference = async (documentReference) => {
@@ -49,4 +57,3 @@ class DatabaseService {
 export const PageService = new DatabaseService("pages");
 export const BlogService = new DatabaseService("news");
 export const UserService = new DatabaseService("users");
-export const BingoService = new DatabaseService("bingo_categories");

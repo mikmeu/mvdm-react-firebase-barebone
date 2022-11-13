@@ -1,5 +1,5 @@
 export const DESKTOP_ITEMS = [
     {text:'Home',href:'/'},
-    {text:'About',href:"/about"},
-    {icon:'user',text:'Account',href:'/user'}
+    {text:'Blog',href:"/blog"},
+    {icon:'user',text:'Account',href:'/account'}
 ];
