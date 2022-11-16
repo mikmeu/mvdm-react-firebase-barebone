@@ -1,5 +1,5 @@
 import { Admin } from "../Pages/Admin";
-import { AdminPageBuilder, AdminPageBuilderEdit } from "../Pages/Admin/AdminPageBuilder";
+import { AdminPageBuilder, AdminPageBuilderCreate, AdminPageBuilderEdit } from "../Pages/Admin/AdminPageBuilder";
 
 export const adminRoutes = [
     { 
@@ -9,7 +9,12 @@ export const adminRoutes = [
         {
             path: "pages/*",
             component: AdminPageBuilder,
-            routes: [{
+            routes: [
+            {
+              path: "create",
+              component: AdminPageBuilderCreate
+            },
+            {
                 path: ":id",
                 component: AdminPageBuilderEdit
             }

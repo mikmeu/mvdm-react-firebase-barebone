@@ -1,0 +1,46 @@
+.pbe-window {
+    margin:25px 0px;
+}
+.pbe-row, .pbe-item {
+    border: 1px solid #222;
+    font-size:15px;
+}
+.pbe-item {
+    padding:5px;
+}
+.pbe-row-placeholder {
+    padding:5px;
+    text-align:center;
+}
+.pbe-row-placeholder .btn {
+    margin:0px auto;
+    display:block;
+    float:left;
+}
+.pbe-row-outer {
+    background:#222;
+    font-size:12px;
+    color:#fff;
+    padding:5px;
+}
+.pbe-row-2, .pbe-row-7, .pbe-row-8, .pbe-row-9, .pbe-row-10 {
+    grid-template-columns: repeat(2, 1fr);
+}
+.pbe-row-6 {
+    grid-template-columns: repeat(6, 1fr);
+}
+.pbe-row-5 {
+    grid-template-columns: repeat(5, 1fr);
+}
+.pbe-row-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+.pbe-row-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+.pbe-cell {
+    border:1px solid #222;
+    padding:5px;
+    background:#fff;
+    color:#222;
+}
